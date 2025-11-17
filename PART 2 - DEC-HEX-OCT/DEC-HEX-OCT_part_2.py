@@ -55,14 +55,8 @@ TRANSITIONS = {
 
     # Dec
     DEC_ZERO: {
-        "ZERO": DEC_ZERO,
-        "UND": DEC_UND_AFTER_ZERO,
         "O": OCT_PREFIX_O,
         "X": HEX_PREFIX_X,
-
-    },
-    DEC_UND_AFTER_ZERO: {
-        "ZERO": DEC_ZERO,
     },
     DEC_NONZERO: {
         "ZERO": DEC_NONZERO,
