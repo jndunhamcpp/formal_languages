@@ -1,3 +1,7 @@
+Github: jndunhamcpp
+
+CPP Email: jndunham@cpp.edu
+
 Abhishek Sarepaka
 
 Github: asarepaka
@@ -7,11 +11,11 @@ CPP Email: asarepaka@cpp.edu
 - Designed the complete NFA for decintegers, ensuring it handled unlimited digits correctly and followed Python’s lexical rules
 - Tested the NFA using JFLAP, generated the required .jff and .jpg files, and implemented the initial Python code that validates decimal integer inputs based on the NFA’s behavior
 
-Jenson Dunham
+Abhishek Sarepaka
 
-Github: jndunhamcpp
+Github: asarepaka
 
-CPP Email: jndunham@cpp.edu
+CPP Email: asarepaka@cpp.edu
 
 - Completed Part 2, expanding the project to support Python octinteger and hexinteger literals 
 - Created the NFAs for both bases and combined them with the decinteger NFA into a single unified machine capable of recognizing all three integer types in one run
