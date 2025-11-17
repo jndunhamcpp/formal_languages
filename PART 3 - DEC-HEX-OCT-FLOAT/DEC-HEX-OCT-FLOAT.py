@@ -75,8 +75,6 @@ TRANSITIONS = {
 
     # Dec
     DEC_ZERO: {
-        "ZERO": DEC_ZERO,
-        "UND": DEC_UND_AFTER_ZERO,
         "O": OCT_PREFIX_O,
         "X": HEX_PREFIX_X,
         "DOT": FLOAT_POINT_AFTER_DEC,
@@ -87,9 +85,6 @@ TRANSITIONS = {
         "DEC_ONLY_DIG": DEC_NONZERO,
         "UND": DEC_UND_AFTER_NONZERO,
         "DOT": FLOAT_POINT_AFTER_DEC,
-    },
-    DEC_UND_AFTER_ZERO: {
-        "ZERO": DEC_ZERO,
     },
     DEC_UND_AFTER_NONZERO: {
         "ZERO": DEC_NONZERO,
