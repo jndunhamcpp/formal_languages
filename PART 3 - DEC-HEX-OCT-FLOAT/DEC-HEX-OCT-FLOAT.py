@@ -26,6 +26,12 @@ FLOAT_FRAC = "FLOAT_FRAC"
 FLOAT_FRAC_UND = "FLOAT_FRAC_UND"
 FLOAT_POINT_ONLY = "FLOAT_POINT_ONLY"
 
+# Exponent
+EXP_E = "EXP_E"
+EXP_SIGN = "EXP_SIGN"
+EXP_DIGIT = "EXP_DIGIT"
+EXP_UND = "EXP_UND"
+
 DEAD = "DEAD"
 
 ACCEPTING_STATES = {
@@ -34,7 +40,8 @@ ACCEPTING_STATES = {
     OCT_DIGIT,
     HEX_DIGIT,
     FLOAT_POINT_AFTER_DEC,
-    FLOAT_FRAC
+    FLOAT_FRAC,
+    EXP_DIGIT,
 }
 
 # Classify Characters
@@ -85,11 +92,13 @@ TRANSITIONS = {
         "DEC_ONLY_DIG": DEC_NONZERO,
         "UND": DEC_UND_AFTER_NONZERO,
         "DOT": FLOAT_POINT_AFTER_DEC,
+        "E": EXP_E,
     },
     DEC_UND_AFTER_NONZERO: {
         "ZERO": DEC_NONZERO,
         "OCT_DIG": DEC_NONZERO,
         "DEC_ONLY_DIG": DEC_NONZERO,
+        "E": EXP_E,
     },
 
     # Oct
@@ -134,6 +143,7 @@ TRANSITIONS = {
         "OCT_DIG": FLOAT_FRAC,
         "DEC_ONLY_DIG": FLOAT_FRAC,
         "UND": FLOAT_FRAC_UND,
+        "E": EXP_E,
     },
     FLOAT_POINT_ONLY: {
         "ZERO": FLOAT_FRAC,
@@ -145,12 +155,37 @@ TRANSITIONS = {
         "OCT_DIG": FLOAT_FRAC,
         "DEC_ONLY_DIG": FLOAT_FRAC,
         "UND": FLOAT_FRAC_UND,
+        "E": EXP_E,
     },
     FLOAT_FRAC_UND: {
         "ZERO": FLOAT_FRAC,
         "OCT_DIG": FLOAT_FRAC,
         "DEC_ONLY_DIG": FLOAT_FRAC,
     },
+    EXP_E: {
+        "PLUS": EXP_SIGN,
+        "MINUS": EXP_SIGN,
+        "ZERO": EXP_DIGIT,
+        "OCT_DIG": EXP_DIGIT,
+        "DEC_ONLY_DIG": EXP_DIGIT,
+    },
+    EXP_SIGN: {
+        "ZERO": EXP_DIGIT,
+        "OCT_DIG": EXP_DIGIT,
+        "DEC_ONLY_DIG": EXP_DIGIT,
+    },
+    EXP_DIGIT: {
+        "ZERO": EXP_DIGIT,
+        "OCT_DIG": EXP_DIGIT,
+        "DEC_ONLY_DIG": EXP_DIGIT,
+        "UND": EXP_UND,
+    },
+    EXP_UND: {
+        "ZERO": EXP_DIGIT,
+        "OCT_DIG": EXP_DIGIT,
+        "DEC_ONLY_DIG": EXP_DIGIT,
+    },
+    
     DEAD: {}
 }
 
