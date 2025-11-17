@@ -1,12 +1,9 @@
+Jenson Dunham
+
 Github: jndunhamcpp
 
 CPP Email: jndunham@cpp.edu
 
-Abhishek Sarepaka
-
-Github: asarepaka
-
-CPP Email: asarepaka@cpp.edu
 - Worked on Part 1, which focused on recognizing Python decimal integer literals
 - Designed the complete NFA for decintegers, ensuring it handled unlimited digits correctly and followed Python’s lexical rules
 - Tested the NFA using JFLAP, generated the required .jff and .jpg files, and implemented the initial Python code that validates decimal integer inputs based on the NFA’s behavior
